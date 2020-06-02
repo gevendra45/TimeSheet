@@ -15,10 +15,8 @@ def register_home(request):
 		today_str = today.strftime("%d%m%Y")
 		a = today_str+request.POST.get("intime")
 		time1 = datetime.datetime.strptime(a,"%d%m%Y%H%M")
-		print("time1 = ", time1)
 		a = today_str+request.POST.get("outtime")
 		time2 = datetime.datetime.strptime(a,"%d%m%Y%H%M")
-		print("time2 = ", time2)
 		dateTimeDifference = time2-time1
 		dateTimeDifferenceInHours = dateTimeDifference.total_seconds()
 		if int(dateTimeDifferenceInHours) <= 0:
@@ -35,7 +33,6 @@ def register_home(request):
 				time2 = datetime.datetime.combine(datetime.date.today(), i.outtime)
 				dateTimeDifference = time1-time2
 				dateTimeDifferenceInHours = dateTimeDifference.total_seconds()
-				print(dateTimeDifferenceInHours, int(dateTimeDifferenceInHours))
 				if int(dateTimeDifferenceInHours) <= 0:
 					context = { 
 						"message" : "Either the same entry is present or either time slots are mentioned for Employee ID previously."
