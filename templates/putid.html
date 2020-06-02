@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div align="center">
+	<form method = 'POST'>{% csrf_token %}
+		<h2>Fill your TimeSheet</h2>
+		{{ form.as_p }}
+		<input type = 'submit' value = 'Submit Details' />
+	</form>
+	<br>
+	<br>
+	<form action="http://localhost:8000/getid/">
+       	<input type="submit" value="View Reports" />
+    </form>
+	</div>
+{% endblock content %}

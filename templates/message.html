@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<br>
+<div align = "center">
+		<h3>{{ message }}</h3>
+		<br>
+		<table>
+			<td>
+				<form action="http://localhost:8000/">
+    	   			<input type="submit" value="Fill TimeSheet" />
+    			</form>
+			</td>
+			<td>
+				<form action="http://localhost:8000/getid/">
+    	   			<input type="submit" value="View Reports" />
+    			</form>
+			</td>
+		</table>
+</div>
+
+{% endblock content %}
