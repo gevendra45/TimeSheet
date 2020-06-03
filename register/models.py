@@ -9,9 +9,11 @@ class Logintime(models.Model):
 	rdate = models.DateField(default=django.utils.timezone.now)#(default=datetime.date.today())
 	intime = models.TimeField()
 	outtime = models.TimeField()
+	wtime = models.FloatField(default=0)
+	nwtime = models.FloatField(default=0)
 
 	def __unicode__(self):
 		return self.empid
 
 	def __str__(self):
-		return self.empid
+		return self.empid 
