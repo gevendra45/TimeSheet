@@ -16,12 +16,13 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+import register.views as re
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', "register.views.register_home"),
-    url(r'^success/$', "register.views.register_succ"),
-    url(r'^nodata/$', "register.views.nodata_found"),
-    url(r'^getid/$', "register.views.get_id"),
-    url(r'^report/(?P<id>\d+)/$', "register.views.generate_report"),
+    url(r'^$', re.register_home),
+    url(r'^success/$', re.register_succ),
+    url(r'^nodata/$', re.nodata_found),
+    url(r'^getid/$', re.get_id),
+    url(r'^report/(?P<id>\d+)/$', re.generate_report),
 ]

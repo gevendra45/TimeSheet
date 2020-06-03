@@ -75,7 +75,7 @@ def get_id(request):
 			nwtime = round(nwtime/3600, 2)
 			wtime = round(wtime/3600, 2)
 	
-			template = get_template('timesheet.html')
+			template = get_template('report.html')
 			context = {
 				"empid" : a[0].empid,
 				"intime" : intime,
@@ -123,4 +123,4 @@ def generate_report(request, id=None):
 		pdf = render_to_pdf('timesheet.html', context)
 		if pdf:
 			return HttpResponse(pdf, content_type='application/pdf')
-	return redirect(nodata_found)
+	return redirect(nodata_found) 
