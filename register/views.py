@@ -38,6 +38,7 @@ def register_home(request):
 		outtime=time2 = datetime.datetime.strptime(a,"%d%m%Y%H%M")
 		dateTimeDifference = time2-time1
 		dateTimeDifferenceInHours = dateTimeDifference.total_seconds()
+		wtime = round(dateTimeDifferenceInHours/3600, 2)
 		nwtime=0
 		if int(dateTimeDifferenceInHours) <= 0:
 			context = { 
@@ -59,7 +60,6 @@ def register_home(request):
 						"message" : "Either the same entry is present or either time slots are mentioned for Employee ID previously."
 					}
 					return render(request, "message.html", context)
-		wtime = round(dateTimeDifferenceInHours/3600, 2)
 		obj = Logintime.objects.create(empid=empid, intime=time1, outtime = outtime, wtime = wtime, nwtime = nwtime)
 		obj.save()
 		return redirect(register_succ)
