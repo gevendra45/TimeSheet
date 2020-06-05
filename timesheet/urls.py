@@ -20,9 +20,10 @@ import register.views as re
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', re.register_home),
+    url(r'^$', re.register_counter),
     url(r'^success/$', re.register_succ),
     url(r'^nodata/$', re.nodata_found),
+    url(r'^approval/$', re.approval),
     url(r'^getid/$', re.get_id),
     url(r'^report/(?P<id>\d+)/$', re.generate_report),
 ]

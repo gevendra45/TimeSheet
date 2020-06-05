@@ -1,3 +1,4 @@
+
 <html>
     <head>
         <title>TimeSheet details</title>
@@ -33,7 +34,7 @@
                 color: #333; /* old IE */
                 background-color: #fff; /* Modern Browsers */
             }
-            table, td {
+            td {
                 border: 1px solid black;
                 border-collapse: collapse;
             }
@@ -44,7 +45,7 @@
         </style>
     </head>
     <body>   
-    <br><br><br>
+    <br><br>
     <div align="center">
     <a href="https://leotechnosoft.net" class="logo-link">
     <img src="https://leotechnosoft.net/wp-content/uploads/2020/05/leologo1.png" alt="logo" class="logo-dark" style="height:50px;margin-top:-25px">
@@ -65,9 +66,26 @@
                 <td><b>Non-Working Hours<b></td><td>{{ nwhours }} Hours</td>
             </table>
         <br>
-        <form action="http://localhost:8000/report/{{ empid }}/">
-    	   <input type="submit" value="Click to view in PDF" />
-	   </form>
+        <form action="http://localhost:8000/report/{{ empid }}">
+           <input type="submit" value="Click to view in PDF" />
+       </form>
+        <table>
+            <th>
+                <form action="http://localhost:8000/">
+                    <input type="submit" value="Fill TimeSheet" />
+                </form> 
+            </th>
+            <th>
+                <form action="http://localhost:8000/getid">
+                    <input type="submit" value="View Reports" />
+                </form>
+            </th>
+            <th>
+                <form action="http://localhost:8000/approval">
+                    <input type="submit" value="Send it for Approval" />
+                </form>
+            </th>
+        </table>
     </div>
     </body>
 </html>

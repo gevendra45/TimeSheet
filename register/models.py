@@ -7,10 +7,11 @@ from django.db import models
 class Logintime(models.Model):
 	empid = models.CharField(max_length=6)
 	rdate = models.DateField(default=django.utils.timezone.now)#(default=datetime.date.today())
-	intime = models.TimeField()
-	outtime = models.TimeField()
+	intime = models.DateTimeField()
+	outtime = models.DateTimeField()
 	wtime = models.FloatField(default=0)
 	nwtime = models.FloatField(default=0)
+	io = models.CharField(default='I', max_length=1)
 
 	def __unicode__(self):
 		return self.empid

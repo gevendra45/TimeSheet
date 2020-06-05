@@ -125,3 +125,4 @@ TIME_INPUT_FORMATS = ['%H%M',]
 DATE_INPUT_FORMATS = ['%Y%m%d',]
 
 TIME_ZONE = 'Asia/Kolkata'
+USE_TZ = False

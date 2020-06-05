@@ -3,15 +3,15 @@
 {% block content %}
 <div align = "center">
 	<form method = 'POST'> {% csrf_token %}
-		<h3>Input your Employee ID</h3>
+		<h3>{{ message }}</h3>
 		{{ form.as_p }}
 		<input type = 'submit' value = 'SUBMIT' />
 		<br>
 	</form>
 	<br>
 	<br>
-	<form action="http://localhost:8000/">
-    	<input type="submit" value="Fill TimeSheet" />
+	<form action= {{ link }}>
+    	<input type="submit" value= "{{ button }}" />
     </form>
 </div>
 {% endblock content %}
