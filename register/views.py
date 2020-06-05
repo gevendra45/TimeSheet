@@ -24,7 +24,10 @@ def register_counter(request):
 				io='I'
 			)
 			obj.save()
-			return redirect(register_succ)
+			context = { 
+				"message" : "Submitted Successfully Your Timesheet Couter Started."
+			}
+			return render(request, "message.html", context)
 		else:
 			if x[len(x)-1].io=='I':
 				print("i am going out")
@@ -41,7 +44,10 @@ def register_counter(request):
 				updt.wtime = wtime 
 				updt.io='O'
 				updt.save()
-				return redirect(register_succ)
+				context = { 
+					"message" : "Submitted Successfully Your Timesheet Couter Stopped."
+				}
+				return render(request, "message.html", context)
 
 			if x[len(x)-1].io=='O':
 				print("i am returning office")
@@ -56,7 +62,10 @@ def register_counter(request):
 					io='I'
 				)
 				obj.save()
-				return redirect(register_succ)
+				context = { 
+					"message" : "Submitted Successfully Your Timesheet Couter Started."
+				}
+				return render(request, "message.html", context)
 	context = { 
 		"form" : form,
 		"message" : "Start Counter by input your Employee ID",
